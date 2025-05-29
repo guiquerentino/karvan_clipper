@@ -1,0 +1,558 @@
+
+ DBFXLS
+
+ Start     Length     Name                   Class                  Group
+ 0001:0000 00748H     NATION_TEXT            CODE 
+ 0001:0748 00281H     DBFXLS                 CODE 
+ 0001:09CA 0320CH     _TEXT                  CODE 
+ 0001:3BE0 02C48H     EMULATOR_TEXT          CODE 
+ 0001:6828 0034BH     ASUPPORT_TEXT          CODE 
+ 0001:6B74 00135H     DYNAMIC_TEXT           CODE 
+ 0001:6CAA 0252AH     MACRO_TEXT             CODE 
+ 0001:91D4 02219H     PLANKTON_TEXT          CODE 
+ 0001:B3EE 01AF6H     STACK_TEXT             CODE 
+ 0002:0000 03677H     VM_TEXT                CODE 
+ 0002:3677 014BAH     SCREEN_DRIVER_TEXT     CODE 
+ 0002:4B32 00141H     MEMORY_TEXT            CODE 
+ 0002:4C74 0012CH     TB_TEXT                CODE 
+ 0002:4DA0 00077H     WEEDBED_TEXT           CODE 
+ 0002:4E18 00005H     EXO01_TEXT             CODE 
+ 0002:4E1E 00005H     EXO05_TEXT             CODE 
+ 0002:4E24 00040H     RAT04_TEXT             CODE 
+ 0002:4E64 0006CH     RAT06_TEXT             CODE 
+ 0002:4ED0 00000H     SORTBLOC_TEXT          CODE 
+ 0002:4ED0 005D3H     FILESYS_TEXT           CODE 
+ 0002:54A4 00818H     DATE_TEXT              CODE 
+ 0002:5CBC 00052H     OSDATE_TEXT            CODE 
+ 0002:5D0E 00970H     TXOPEN_TEXT            CODE 
+ 0002:667E 00094H     GETENV_TEXT            CODE 
+ 0002:6712 005ECH     DVC_TEXT               CODE 
+ 0002:6CFE 00084H     FPVALID_TEXT           CODE 
+ 0002:6D82 00018H     STRCAT_TEXT            CODE 
+ 0002:6D9A 00018H     STRCPY_TEXT            CODE 
+ 0002:6DB2 00012H     STRLEN_TEXT            CODE 
+ 0002:6DC4 0001CH     STRNCPY_TEXT           CODE 
+ 0002:6DE0 00034H     SQUAWK_TEXT            CODE 
+ 0002:6E14 0025EH     INITEXIT_TEXT          CODE 
+ 0002:7072 00392H     APPINIT_TEXT           CODE 
+ 0002:7404 0017CH     APPEXIT_TEXT           CODE 
+ 0002:7580 004C6H     CAWDCIDI_TEXT          CODE 
+ 0002:7A46 00000H     CAWDCIEX_TEXT          CODE 
+ 0002:7A46 00030H     HARDINIT_TEXT          CODE 
+ 0002:7A76 00136H     MAIN_TEXT              CODE 
+ 0002:7BAC 00264H     UPREF_TEXT             CODE 
+ 0002:7E10 0002CH     CLIPINIT$              CODE 
+ 0002:7E3C 0001AH     SYSINIT                CODE 
+ 0002:7E56 00154H     RUN_TEXT               CODE 
+ 0002:7FAA 00033H     SYSCALL_TEXT           CODE 
+ 0002:7FDD 003D7H     EVENT_DRIVER_TEXT      CODE 
+ 0002:83B4 00E84H     EVENT_TEXT             CODE 
+ 0002:9238 00014H     EVDATA_TEXT            CODE 
+ 0002:924C 00400H     DYNC_TEXT              CODE 
+ 0002:964C 00042H     DYNA_TEXT              CODE 
+ 0002:968E 006EEH     SYMSYS_TEXT            CODE 
+ 0002:9D7C 031C9H     OM_TEXT                CODE 
+ 0002:CF46 00484H     FIELD_TEXT             CODE 
+ 0002:D3CA 00932H     EXTEND_TEXT            CODE 
+ 0002:DCFC 0019EH     CALL_TEXT              CODE 
+ 0002:DE9A 001D0H     FGET_TEXT              CODE 
+ 0002:E06A 00A74H     SEND_TEXT              CODE 
+ 0002:EADE 006E8H     SET_TEXT               CODE 
+ 0003:0000 01988H     OPS_TEXT               CODE 
+ 0003:1988 000F0H     EXACTCMP_TEXT          CODE 
+ 0003:1A78 000E0H     ADEL_TEXT              CODE 
+ 0003:1B58 00030H     ERRORSYS               CODE 
+ 0003:1B88 00259H     DEFERROR               CODE 
+ 0003:1DE2 00128H     ERRORMESSA             CODE 
+ 0003:1F0A 00256H     ERRSYS0_TEXT           CODE 
+ 0003:2160 0109EH     ERRSYS1_TEXT           CODE 
+ 0003:31FE 001C8H     SEQ_TEXT               CODE 
+ 0003:33C6 00176H     AEVAL_TEXT             CODE 
+ 0003:353C 00662H     ALLOC_TEXT             CODE 
+ 0003:3B9E 001DDH     KMAP_TEXT              CODE 
+ 0003:3D7C 0024BH     SUBAL_TEXT             CODE 
+ 0003:3FC8 00065H     OSMEM_TEXT             CODE 
+ 0003:402E 00004H     OSME_TEXT              CODE 
+ 0003:4032 000C0H     XMACRO_TEXT            CODE 
+ 0003:40F2 006CAH     DYNX_TEXT              CODE 
+ 0003:47BC 0001DH     INSTD_TEXT             CODE 
+ 0003:47DA 00640H     OUTSTD_TEXT            CODE 
+ 0003:4E1A 01B86H     GT_TEXT                CODE 
+ 0003:69A0 0058CH     MOUSE_TEXT             CODE 
+ 0003:6F2C 017E8H     TERM_TEXT              CODE 
+ 0003:8714 00172H     BOX_TEXT               CODE 
+ 0003:8886 00188H     TCVT_TEXT              CODE 
+ 0003:8A0E 00020H     MAXROW_TEXT            CODE 
+ 0003:8A2E 0073AH     COLOR_TEXT             CODE 
+ 0003:9168 0001AH     SETCURS_TEXT           CODE 
+ 0003:9182 003DAH     SAVEREST_TEXT          CODE 
+ 0003:955C 000BEH     SCROLL_TEXT            CODE 
+ 0003:961A 0003BH     __SETHELPK             CODE 
+ 0003:9656 00FBCH     PICT_TEXT              CODE 
+ 0003:A612 0060CH     GETS0_TEXT             CODE 
+ 0003:AC1E 01076H     GETS1_TEXT             CODE 
+ 0003:BC94 01FDCH     GETS2_TEXT             CODE 
+ 0003:DC70 00016H     VIDEO_TEXT             CODE 
+ 0003:DC86 00046H     _DUMMY_TEXT            CODE 
+ 0003:DCCC 000A9H     GETNEW                 CODE 
+ 0003:DD76 00021H     __GETHASFO             CODE 
+ 0003:DD98 0002CH     __GETBUFFE             CODE 
+ 0003:DDC4 0002CH     __GETORIGI             CODE 
+ 0003:DDF0 0002FH     __GETSETCA             CODE 
+ 0003:DE20 000D1H     __GETSETCN             CODE 
+ 0003:DEF2 00035H     __GETSETCP             CODE 
+ 0003:DF28 00036H     __GETSETCC             CODE 
+ 0003:DF5E 00036H     __GETSETCR             CODE 
+ 0003:DF94 00035H     __GETSETME             CODE 
+ 0003:DFCA 00032H     __GETSETBL             CODE 
+ 0003:DFFC 00032H     __GETSETNA             CODE 
+ 0003:E02E 00032H     __GETSETPI             CODE 
+ 0003:E060 00032H     __GETSETPB             CODE 
+ 0003:E092 00032H     __GETSETPR             CODE 
+ 0003:E0C4 00032H     __GETSETSU             CODE 
+ 0003:E0F6 00032H     __GETSETEX             CODE 
+ 0003:E128 00032H     __GETSETRE             CODE 
+ 0003:E15A 00035H     __GETSETBU             CODE 
+ 0003:E190 00060H     __GETBADDA             CODE 
+ 0003:E1F0 00042H     __GETUNDO              CODE 
+ 0003:E232 0008CH     __GETTODEC             CODE 
+ 0003:E2BE 0002CH     __GETDWLEF             CODE 
+ 0003:E2EA 0002BH     __GETHITTE             CODE 
+ 0003:E316 000D5H     GETHITTEST             CODE 
+ 0003:E3EC 00329H     READMODAL              CODE 
+ 0003:E716 00187H     GETREADER              CODE 
+ 0003:E89E 002B1H     GUIREADER              CODE 
+ 0003:EB50 00219H     TBREADER               CODE 
+ 0003:ED6A 00195H     HITTEST                CODE 
+ 0003:EF00 002A6H     ACCELERATO             CODE 
+ 0003:F1A6 0059CH     GETAPPLYKE             CODE 
+ 0003:F742 0034DH     GETAPPLYKE             CODE 
+ 0004:0000 0059DH     GUIAPPLYKE             CODE 
+ 0004:059E 0026FH     TBAPPLYKEY             CODE 
+ 0004:080E 000CAH     GETPREVALI             CODE 
+ 0004:08D8 00155H     GETPOSTVAL             CODE 
+ 0004:0A2E 000C8H     GUIPREVALI             CODE 
+ 0004:0AF6 00177H     GUIPOSTVAL             CODE 
+ 0004:0C6E 000A8H     GETDOSETKE             CODE 
+ 0004:0D16 001F8H     SETTLE                 CODE 
+ 0004:0F0E 0003EH     POSTACTIVE             CODE 
+ 0004:0F4C 000ACH     CLEARGETSY             CODE 
+ 0004:0FF8 00056H     RESTOREGET             CODE 
+ 0004:104E 00083H     GETREADVAR             CODE 
+ 0004:10D2 00039H     __SETFORMA             CODE 
+ 0004:110C 00024H     __KILLREAD             CODE 
+ 0004:1130 0003CH     GETACTIVE              CODE 
+ 0004:116C 00024H     UPDATED                CODE 
+ 0004:1190 0002DH     READEXIT               CODE 
+ 0004:11BE 0002DH     READINSERT             CODE 
+ 0004:11EC 00069H     SHOWSCOREB             CODE 
+ 0004:1256 0007FH     DATEMSG                CODE 
+ 0004:12D6 00104H     RANGECHECK             CODE 
+ 0004:13DA 0003CH     READKILL               CODE 
+ 0004:1416 0003CH     READUPDATE             CODE 
+ 0004:1452 0003CH     READFORMAT             CODE 
+ 0004:148E 0003EH     READSTATS              CODE 
+ 0004:14CC 00125H     SHOWGETMSG             CODE 
+ 0004:15F2 00127H     ERASEGETMS             CODE 
+ 0004:171A 00035H     STATICS$               CODE 
+ 0004:1750 00022H     STATICS$               CODE 
+ 0004:1772 0002DH     STATICS$               CODE 
+ 0004:17A0 000D0H     STATICS$               CODE 
+ 0004:1870 00024H     STATICS$               CODE 
+ 0004:1894 0002BH     STATICS$               CODE 
+ 0004:18C0 0003CH     READVAR                CODE 
+ 0004:18FC 00BDFH     MENUMODAL              CODE 
+ 0004:24DC 000E6H     PUSHMENU               CODE 
+ 0004:25C2 00069H     POPMENU                CODE 
+ 0004:262C 00073H     POPCHILD               CODE 
+ 0004:26A0 00056H     POPALL                 CODE 
+ 0004:26F6 00222H     EXECUTE                CODE 
+ 0004:2918 0009BH     MHITTEST               CODE 
+ 0004:29B4 00223H     SHOWMSG                CODE 
+ 0004:2BD8 0017BH     ISSHORTCUT             CODE 
+ 0004:2D54 00103H     ISQUICK                CODE 
+ 0004:2E58 00038H     _SETVIDEOM             CODE 
+ 0004:2E90 00043H     _ISGRAPHIC             CODE 
+ 0004:2ED4 001B5H     _GETNUMCOL             CODE 
+ 0004:308A 0060CH     ITEMAPI_TEXT           CODE 
+ 0004:3696 00042H     _DTXCONDSE             CODE 
+ 0004:36D8 00034H     DBCREATEIN             CODE 
+ 0004:370C 00028H     DBSETINDEX             CODE 
+ 0004:3734 00021H     DBCLEARIND             CODE 
+ 0004:3756 00021H     DBREINDEX              CODE 
+ 0004:3778 00044H     DBSETORDER             CODE 
+ 0004:37BC 00021H     INDEXEXT               CODE 
+ 0004:37DE 0004EH     INDEXKEY               CODE 
+ 0004:382C 00030H     ORDDESCEND             CODE 
+ 0004:385C 00030H     ORDKEYADD              CODE 
+ 0004:388C 0002DH     ORDISUNIQU             CODE 
+ 0004:38BA 0002DH     ORDKEYCOUN             CODE 
+ 0004:38E8 00030H     ORDKEYDEL              CODE 
+ 0004:3918 0005AH     ORDKEYGOTO             CODE 
+ 0004:3972 0002DH     ORDKEYNO               CODE 
+ 0004:39A0 00024H     ORDKEYVAL              CODE 
+ 0004:39C4 00088H     ORDSCOPE               CODE 
+ 0004:3A4C 0002CH     ORDSKIPUNI             CODE 
+ 0004:3A78 0004EH     ORDSETRELA             CODE 
+ 0004:3AC6 00702H     RDDORD_TEXT            CODE 
+ 0004:41C8 00A96H     RDDSVR_TEXT            CODE 
+ 0004:4C5E 005ECH     DBCMD0_TEXT            CODE 
+ 0004:524A 00D00H     DBCMD1_TEXT            CODE 
+ 0004:5F4A 0034EH     DBCMD2_TEXT            CODE 
+ 0004:6298 00172H     LUPDATE_TEXT           CODE 
+ 0004:640A 00142H     DBJUNCT_TEXT           CODE 
+ 0004:654C 01BA0H     WORKAREA_TEXT          CODE 
+ 0004:80EC 00284H     DBSTRUCT_TEXT          CODE 
+ 0004:8370 004C0H     DBINFO_TEXT            CODE 
+ 0004:8830 00B6AH     DISKIO_TEXT            CODE 
+ 0004:939A 00548H     PHILES_TEXT            CODE 
+ 0004:98E2 00BE1H     DBGAPI_TEXT            CODE 
+ 0004:A4C3 000DDH     DEBUG_INIT_TEXT        CODE 
+ 0004:A5A0 0023EH     DBGSHADO_TEXT          CODE 
+ 0004:A7DE 005B1H     __DBGMENU              CODE 
+ 0004:AD90 00085H     TOPHITTEST             CODE 
+ 0004:AE16 0008BH     SUBHITTEST             CODE 
+ 0004:AEA2 000B2H     MNUTOPOS               CODE 
+ 0004:AF54 000E2H     SHOWMENU               CODE 
+ 0004:B036 000AFH     HIDEMENU               CODE 
+ 0004:B0E6 001C1H     PAINTMENU              CODE 
+ 0004:B2A8 00109H     PAINTITEM              CODE 
+ 0004:B3B2 00098H     KEYSELECT              CODE 
+ 0004:B44A 0005BH     __DBGMBAR              CODE 
+ 0004:B4A6 001ABH     __DBGCMD               CODE 
+ 0004:B652 001ABH     __WINDBGCM             CODE 
+ 0004:B7FE 000F8H     NEXTWORD               CODE 
+ 0004:B8F6 00116H     OLDCMD                 CODE 
+ 0004:BA0C 0017BH     __DBGCMDS              CODE 
+ 0004:BB88 00021H     __DBGSTATE             CODE 
+ 0004:BBAA 0003CH     __DBGSAVES             CODE 
+ 0004:BBE6 00051H     __DBGRESTS             CODE 
+ 0004:BC38 000BBH     __DBGDOS               CODE 
+ 0004:BCF4 0002BH     __DBGSET               CODE 
+ 0004:BD20 0003CH     __DBGCLR               CODE 
+ 0004:BD5C 0003EH     __DBGSCLR              CODE 
+ 0004:BD9A 00086H     __DBGCPICK             CODE 
+ 0004:BE20 00045H     __DBGMKEY              CODE 
+ 0004:BE66 00344H     __DBGTEXT              CODE 
+ 0004:C1AA 000ABH     __DBGCTEXT             CODE 
+ 0004:C256 00DF8H     INITMENUS              CODE 
+ 0004:D04E 00045H     MNUADD                 CODE 
+ 0004:D094 00166H     MNUEND                 CODE 
+ 0004:D1FA 00070H     __DBGSBAR              CODE 
+ 0004:D26A 003E8H     GETOLDCOMM             CODE 
+ 0004:D652 00030H     __DBGNP                CODE 
+ 0004:D682 00030H     __DBGWP                CODE 
+ 0004:D6B2 00030H     __DBGTP                CODE 
+ 0004:D6E2 0003BH     __DBGFILE              CODE 
+ 0004:D71E 00071H     __DBGHFILE             CODE 
+ 0004:D790 00033H     __DBGWFILE             CODE 
+ 0004:D7C4 00042H     __DBGSTEP              CODE 
+ 0004:D806 00042H     __DBGTABW              CODE 
+ 0004:D848 00058H     __DBGDELP              CODE 
+ 0004:D8A0 00039H     __DBGINSP              CODE 
+ 0004:D8DA 00039H     __DBGLOOK              CODE 
+ 0004:D914 00030H     __DBGSS                CODE 
+ 0004:D944 00035H     __DBGPATHS             CODE 
+ 0004:D97A 00039H     __DBGLN                CODE 
+ 0004:D9B4 001CFH     INSPECTNEW             CODE 
+ 0004:DB84 000D0H     INSPECT                CODE 
+ 0004:DC54 000DBH     ARRAYINSPE             CODE 
+ 0004:DD30 00286H     OBJECTINSP             CODE 
+ 0004:DFB6 00090H     INSPECTMOD             CODE 
+ 0004:E046 00301H     INSPECTAPP             CODE 
+ 0004:E348 0037FH     INSPECTGET             CODE 
+ 0004:E6C8 0016DH     SHOWINSPEC             CODE 
+ 0004:E836 000F1H     SHOWINSPNA             CODE 
+ 0004:E928 0006CH     HIDEINSPEC             CODE 
+ 0004:E994 0011DH     INSPTRANS              CODE 
+ 0004:EAB2 0005CH     AWITHIN                CODE 
+ 0004:EB0E 000A7H     INSTANCEVA             CODE 
+ 0004:EBB6 00036H     __DBGERROR             CODE 
+ 0004:EBEC 00059H     __DBGTERMA             CODE 
+ 0004:EC46 00021H     BREAKFAST              CODE 
+ 0004:EC68 0037BH     __DBGSETS              CODE 
+ 0004:EFE4 0010BH     INSPECTCOL             CODE 
+ 0004:F0F0 00036H     __DBGPATH              CODE 
+ 0004:F126 0013DH     FINDINPATH             CODE 
+ 0004:F264 00383H     SETVALN                CODE 
+ 0004:F5E8 00088H     INSPFORCES             CODE 
+ 0004:F670 00068H     ISFILEEXT              CODE 
+ 0004:F6D8 000A0H     GETLEN                 CODE 
+ 0004:F778 001E9H     DBLSHOWINI             CODE 
+ 0004:F962 001E0H     DBLFILLINS             CODE 
+ 0004:FB42 00033H     YESNO                  CODE 
+ 0004:FB76 00343H     DBLBUILDOU             CODE 
+ 0004:FEBA 00078H     ITEMADD                CODE 
+ 0005:0000 00152H     __DBFLIST              CODE 
+ 0005:0152 00066H     DBLCREATEB             CODE 
+ 0005:01B8 000A2H     DBLAREASOB             CODE 
+ 0005:025A 0016DH     DBLITEMSOB             CODE 
+ 0005:03C8 0005FH     DBLFIELDSO             CODE 
+ 0005:0428 0029AH     DBLEVENTLO             CODE 
+ 0005:06C2 0010BH     DBLAREACHA             CODE 
+ 0005:07CE 0009AH     DBLSETTLEA             CODE 
+ 0005:0868 000E6H     DBLITEMEXP             CODE 
+ 0005:094E 00082H     DBLSWITCHP             CODE 
+ 0005:09D0 00069H     DBLITEMNEX             CODE 
+ 0005:0A3A 0005DH     DBLITEMPRE             CODE 
+ 0005:0A98 0005AH     DBLITEMLAS             CODE 
+ 0005:0AF2 000C0H     DBLITEMSKI             CODE 
+ 0005:0BB2 00450H     __DBGHELP              CODE 
+ 0005:1002 0007EH     HLPPAGE                CODE 
+ 0005:1080 001C5H     HLPPAINTTO             CODE 
+ 0005:1246 0003FH     HLPNEWTOPI             CODE 
+ 0005:1286 0014FH     HLPGETTEXT             CODE 
+ 0005:13D6 00074H     HLPTEXT2AR             CODE 
+ 0005:144A 00054H     _ABNEW                 CODE 
+ 0005:149E 000C8H     _ABSETCOLU             CODE 
+ 0005:1566 00063H     _ABLOCK                CODE 
+ 0005:15CA 0007BH     _ABSKIP                CODE 
+ 0005:1646 0024EH     _ABAPPLYKE             CODE 
+ 0005:1894 0013EH     __DBGHTTST             CODE 
+ 0005:19D2 00016H     EMMALLOC_TEXT          CODE 
+ 0005:19E8 00020H     EMMCONTX_TEXT          CODE 
+ 0005:1A08 0003DH     EMMCOUNT_TEXT          CODE 
+ 0005:1A46 00010H     EMMFREE_TEXT           CODE 
+ 0005:1A56 00030H     EMMINST_TEXT           CODE 
+ 0005:1A86 0001AH     EMMMAP_TEXT            CODE 
+ 0005:1AA0 00019H     EMMPAGE_TEXT           CODE 
+ 0005:1ABA 00017H     EMMVERS_TEXT           CODE 
+ 0005:1AD2 0004BH     GETCLRPAIR             CODE 
+ 0005:1B1E 00053H     SETCLRPAIR             CODE 
+ 0005:1B72 0006BH     GETPAIRPOS             CODE 
+ 0005:1BDE 0006BH     GETPAIRLEN             CODE 
+ 0005:1C4A 0003EH     GETCLRFORE             CODE 
+ 0005:1C88 0003DH     GETCLRBACK             CODE 
+ 0005:1CC6 00063H     RADGRDEFCO             CODE 
+ 0005:1D2A 00087H     RADITDEFCO             CODE 
+ 0005:1DB2 00089H     LISTBDEFCO             CODE 
+ 0005:1E3C 00090H     COMBODEFCO             CODE 
+ 0005:1ECC 0006DH     CHECKDEFCO             CODE 
+ 0005:1F3A 0006DH     BUTTNDEFCO             CODE 
+ 0005:1FA8 00080H     MENUDEFCOL             CODE 
+ 0005:2028 00264H     APPLYDEFAU             CODE 
+ 0005:228C 00029H     RDDINIT$               CODE 
+ 0005:22B6 0001AH     RDDSYS                 CODE 
+ 0005:22D0 000A6H     GETE_TEXT              CODE 
+ 0005:2376 003E5H     EXAMPLEA_TEXT          CODE 
+ 0005:275C 00120H     ALLTRIM_TEXT           CODE 
+ 0005:287C 00112H     RIGHT_TEXT             CODE 
+ 0005:298E 000CCH     RAT_TEXT               CODE 
+ 0005:2A5A 00138H     PADR_TEXT              CODE 
+ 0005:2B92 00136H     PADC_TEXT              CODE 
+ 0005:2CC8 00006H     PAD_TEXT               CODE 
+ 0005:2CCE 00170H     IS_TEXT                CODE 
+ 0005:2E3E 00408H     STRTRAN_TEXT           CODE 
+ 0005:3246 00290H     STUFF_TEXT             CODE 
+ 0005:34D6 00154H     ASCAN_TEXT             CODE 
+ 0005:362A 0037EH     ASORT_TEXT             CODE 
+ 0005:39A8 00043H     AFILL                  CODE 
+ 0005:39EC 00097H     ACLONE                 CODE 
+ 0005:3A84 01E9EH     TBROWSE0_TEXT          CODE 
+ 0005:5922 02CEAH     TBROWSE1_TEXT          CODE 
+ 0005:860C 00026H     __TSETCARG             CODE 
+ 0005:8632 00088H     __TSETCOLU             CODE 
+ 0005:86BA 0001FH     __TCARGO               CODE 
+ 0005:86DA 00026H     __TCOLUMN              CODE 
+ 0005:8700 00020H     __TCOLCOUN             CODE 
+ 0005:8720 000E9H     __TBORDER              CODE 
+ 0005:880A 00077H     __TSETRTOP             CODE 
+ 0005:8882 00078H     __TSETRLEF             CODE 
+ 0005:88FA 0008EH     __TSETRBOT             CODE 
+ 0005:8988 0008DH     __TSETRRIG             CODE 
+ 0005:8A16 0004AH     __TSETHEAD             CODE 
+ 0005:8A60 00049H     __TSETCOLS             CODE 
+ 0005:8AAA 0004AH     __TSETFOOT             CODE 
+ 0005:8AF4 00055H     __TSETCOLO             CODE 
+ 0005:8B4A 0004CH     __TSETSKIP             CODE 
+ 0005:8B96 0004DH     __TSETTOP              CODE 
+ 0005:8BE4 0004DH     __TSETBOTT             CODE 
+ 0005:8C32 0004AH     __TMESSAGE             CODE 
+ 0005:8C7C 000EFH     __TSETKEY              CODE 
+ 0005:8D6C 00028H     __TAPPLYKE             CODE 
+ 0005:8D94 00066H     TAPPLYKEY              CODE 
+ 0005:8DFA 0005DH     __TSETSTYL             CODE 
+ 0005:8E58 00033H     __TADDCOLU             CODE 
+ 0005:8E8C 00055H     __TINSCOLU             CODE 
+ 0005:8EE2 00055H     __TDELCOLU             CODE 
+ 0005:8F38 00126H     TBROWSENEW             CODE 
+ 0005:905E 001B5H     KBSETUP                CODE 
+ 0005:9214 0006DH     STSETUP                CODE 
+ 0005:9282 00047H     __CSETWIDT             CODE 
+ 0005:92CA 00047H     __CSETBLOC             CODE 
+ 0005:9312 0004AH     __CSETDEFC             CODE 
+ 0005:935C 0004CH     __CSETCOLO             CODE 
+ 0005:93A8 00049H     __CSETHEAD             CODE 
+ 0005:93F2 00049H     __CSETFOOT             CODE 
+ 0005:943C 00054H     __CSETHSEP             CODE 
+ 0005:9490 00054H     __CSETFSEP             CODE 
+ 0005:94E4 00053H     __CSETCOLS             CODE 
+ 0005:9538 00032H     __CSETPICT             CODE 
+ 0005:956A 0004BH     __CPREBLOC             CODE 
+ 0005:95B6 0004CH     __CPOSTBLO             CODE 
+ 0005:9602 00056H     __CSETSTYL             CODE 
+ 0005:9658 000A3H     TBCOLUMNNE             CODE 
+ 0005:96FC 0000BH     BEEP_TEXT              CODE 
+ 0005:9707 0037FH     KEYBD_DRIVER_TEXT      CODE 
+ 0005:9A86 00474H     MOUSE_DRIVER_TEXT      CODE 
+ 0005:9EFA 05CE4H     DTX1_TEXT              CODE 
+ 0005:FBDE 00058H     DTX0_TEXT              CODE 
+ 0005:FC36 00000H     DTXDYN_TEXT            CODE 
+ 0005:FC36 00012H     NTXLOCK1_TEXT          CODE 
+ 0005:FC48 0003AH     INITHANDL$             CODE 
+ 0005:FC82 0003FH     LOCKERRHAN             CODE 
+ 0005:FCC2 0001AH     _NTXERR                CODE 
+ 0006:0000 004FEH     BRIG_TEXT              CODE 
+ 0006:04FE 0002AH     DBFNTXINI$             CODE 
+ 0006:0528 0001AH     DBFNTX                 CODE 
+ 0006:0542 00033H     BLICALC50              CODE 
+ 0006:0576 00028H     BLIMEMAVL              CODE 
+ 0006:059E 00026H     BLIMEMMAX              CODE 
+ 0006:05C4 0001AH     BLPRFPRG               CODE 
+ 0006:05DE 00653H     BLERRC50               CODE 
+ 0006:0C32 001ADH     BLIERROR               CODE 
+ 0006:0DE0 000E0H     AINS_TEXT              CODE 
+ 0006:0EC0 000D8H     _EINSTVAR              CODE 
+ 0006:0F98 001B4H     ERRORAPI_TEXT          CODE 
+ 0006:114C 004A2H     VMAPI_TEXT             CODE 
+ 0006:15EE 0023EH     VBLOCK_TEXT            CODE 
+ 0006:182C 002B2H     TBCREATE               CODE 
+ 0006:1ADE 000DEH     TBCLOSE                CODE 
+ 0006:1BBC 00062H     TBDISPLAY              CODE 
+ 0006:1C1E 0002BH     TBADDCOL               CODE 
+ 0006:1C4A 0002DH     TBINSCOL               CODE 
+ 0006:1C78 001D5H     MAKECOLUMN             CODE 
+ 0006:1E4E 00068H     TBDELCOL               CODE 
+ 0006:1EB6 0003FH     TBSBLOCK               CODE 
+ 0006:1EF6 0003FH     TBFBLOCK               CODE 
+ 0006:1F36 0003FH     TBBBLOCK               CODE 
+ 0006:1F76 00051H     TBGOTOP                CODE 
+ 0006:1FC8 000CEH     TBGOBOT                CODE 
+ 0006:2096 001F0H     TBSKIP                 CODE 
+ 0006:2286 001AEH     TBMODAL                CODE 
+ 0006:2434 00240H     TBEDITCELL             CODE 
+ 0006:2674 00046H     INSTOGGLE              CODE 
+ 0006:26BA 000DAH     TBMOUSE                CODE 
+ 0006:2794 0007BH     FIELDNBLOC             CODE 
+ 0006:2810 000F2H     FIELDNPUT              CODE 
+ 0006:2902 03EFEH     DBF1_TEXT              CODE 
+ 0006:6800 00042H     DBF0_TEXT              CODE 
+ 0006:6842 00000H     DBFDYN_TEXT            CODE 
+ 0006:6842 00027H     DBFINIT$               CODE 
+ 0006:686A 0001AH     DBFONLY                CODE 
+ 0006:6884 01ABCH     SORTOF_TEXT            CODE 
+ 0006:8340 001D6H     NET_TEXT               CODE 
+ 0007:0000 00016H     $$$OVLDYN              CODE                   BLICLPMGR
+ 0008:0000 00000H     C_ETEXT                ENDCODE 
+ 0008:0000 02468H     $$$KRNCDE              BLIKRNMGR              BLIKRNMGR
+ 0008:2468 0083EH     $$$KRNDAT              BLIKRNMGR              BLIKRNMGR
+ 0008:2CB0 00040H     $$$KRNINI              BLIKRNMGR              BLIKRNMGR
+ 0008:2CF0 00000H     $$$KRNEXI              BLIKRNMGR              BLIKRNMGR
+ 0008:2CF0 00000H     $$$KRNEND              BLIKRNMGR              BLIKRNMGR
+ 0009:0000 00000H     _SYMSTART              SYMSTART 
+ 0009:0000 001B0H     SYMBOLS                SYMBOLS 
+ 0009:01B0 00000H     SYMBOLS                SYMBOLS 
+ 0009:01B0 00030H     SYMBOLS                SYMBOLS 
+ 0009:01E0 00130H     SYMBOLS                SYMBOLS 
+ 0009:0310 00030H     SYMBOLS                SYMBOLS 
+ 0009:0340 00320H     SYMBOLS                SYMBOLS 
+ 0009:0660 006E0H     SYMBOLS                SYMBOLS 
+ 0009:0D40 00010H     SYMBOLS                SYMBOLS 
+ 0009:0D50 00180H     SYMBOLS                SYMBOLS 
+ 0009:0ED0 00010H     SYMBOLS                SYMBOLS 
+ 0009:0EE0 001E0H     SYMBOLS                SYMBOLS 
+ 0009:10C0 002D0H     SYMBOLS                SYMBOLS 
+ 0009:1390 00460H     SYMBOLS                SYMBOLS 
+ 0009:17F0 00210H     SYMBOLS                SYMBOLS 
+ 0009:1A00 000A0H     SYMBOLS                SYMBOLS 
+ 0009:1AA0 000A0H     SYMBOLS                SYMBOLS 
+ 0009:1B40 000D0H     SYMBOLS                SYMBOLS 
+ 0009:1C10 00040H     SYMBOLS                SYMBOLS 
+ 0009:1C50 00000H     SYMBOLS                SYMBOLS 
+ 0009:1C50 00380H     SYMBOLS                SYMBOLS 
+ 0009:1FD0 00030H     SYMBOLS                SYMBOLS 
+ 0009:2000 00040H     SYMBOLS                SYMBOLS 
+ 0009:2040 00070H     SYMBOLS                SYMBOLS 
+ 0009:20B0 000B0H     SYMBOLS                SYMBOLS 
+ 0009:2160 00040H     SYMBOLS                SYMBOLS 
+ 0009:21A0 00320H     SYMBOLS                SYMBOLS 
+ 0009:24C0 00020H     SYMBOLS                SYMBOLS 
+ 0009:24E0 00000H     _SYMEND                SYMEND 
+ 0009:24E0 00000H     _CONST                 CONST 
+ 0009:24E0 001A2H     OPERR                  CONST 
+ 0009:2682 00000H     _MSG                   MSG 
+ 0009:2682 00000H     _BEGBSS                BEGBSS 
+ 0009:2682 00000H     _ENDBSS                ENDBSS 
+ 0009:2690 00169H     EMULATOR_DATA          FAR_DATA 
+ 0009:27FA 01B9AH     MACRO5_DATA            FAR_DATA 
+ 0009:4394 000D2H     _ESEG_DATA             FAR_DATA 
+ 000A:0000 00000H     DMTB                   DLL                    DMT_GROUP
+ 000A:0000 00014H     DMT                    DLL                    DMT_GROUP
+ 000A:0014 00000H     DMTE                   DLL                    DMT_GROUP
+ 000B:0000 00000H     $$DYNBEGIN             $$DYNBEGIN             DYNGROUP
+ 000B:0000 00088H     $$DYNFNAMES            $$DYNFNAMES            DYNGROUP
+ 000B:0090 00000H     $$DYNBPAGES            $$DYNPAGES             DYNGROUP
+ 000B:0090 00000H     $$DYNPAGES             $$DYNPAGES             DYNGROUP
+ 000B:0090 00000H     $$DYNEND               $$DYNEND               DYNGROUP
+ 000C:0000 00010H     NULL                   BEGDATA                DGROUP
+ 000C:0010 01A3CH     _DATA                  DATA                   DGROUP
+ 000C:1A50 00002H     _DATA                  DATA                   DGROUP
+ 000C:1A52 032EAH     _DATA                  DATA                   DGROUP
+ 000C:4D3C 00000H     _SYMPB                 DATA                   DGROUP
+ 000C:4D3C 00020H     _SYMP                  DATA                   DGROUP
+ 000C:4D5C 00000H     _SYMPE                 DATA                   DGROUP
+ 000C:4D5C 00002H     XIQC                   DATA                   DGROUP
+ 000C:4D5E 0000CH     DBDATA                 DATA                   DGROUP
+ 000C:4D6A 0000EH     CDATA                  DATA                   DGROUP
+ 000C:4D78 00000H     XIFB                   DATA                   DGROUP
+ 000C:4D78 00004H     XIF                    DATA                   DGROUP
+ 000C:4D7C 00000H     XIFE                   DATA                   DGROUP
+ 000C:4D7C 00000H     XIB                    DATA                   DGROUP
+ 000C:4D7C 00008H     XI                     DATA                   DGROUP
+ 000C:4D84 00000H     XIE                    DATA                   DGROUP
+ 000C:4D84 00000H     XPB                    DATA                   DGROUP
+ 000C:4D84 00000H     XP                     DATA                   DGROUP
+ 000C:4D84 00000H     XPE                    DATA                   DGROUP
+ 000C:4D84 00000H     XCB                    DATA                   DGROUP
+ 000C:4D84 00000H     XC                     DATA                   DGROUP
+ 000C:4D84 00000H     XCE                    DATA                   DGROUP
+ 000C:4D84 00000H     XCFB                   DATA                   DGROUP
+ 000C:4D84 00000H     XCFCRT                 DATA                   DGROUP
+ 000C:4D84 00000H     XCF                    DATA                   DGROUP
+ 000C:4D84 00000H     XCFE                   DATA                   DGROUP
+ 000C:4D84 00000H     XIFCB                  DATA                   DGROUP
+ 000C:4D84 00000H     XIFU                   DATA                   DGROUP
+ 000C:4D84 00000H     XIFL                   DATA                   DGROUP
+ 000C:4D84 00000H     XIFM                   DATA                   DGROUP
+ 000C:4D84 00000H     XIFCE                  DATA                   DGROUP
+ 000C:4D84 00000H     XNCB                   DATA                   DGROUP
+ 000C:4D84 0002CH     XNC                    DATA                   DGROUP
+ 000C:4DB0 00000H     XNCE                   DATA                   DGROUP
+ 000C:4DB0 0014CH     $LIB_TABLE             DATA                   DGROUP
+ 000C:4EFC 00000H     XDBGB                  DATA                   DGROUP
+ 000C:4EFC 00000H     XDBG                   DATA                   DGROUP
+ 000C:4EFC 00000H     XDBGE                  DATA                   DGROUP
+ 000C:4EFC 0003AH     CONST                  CONST                  DGROUP
+ 000C:4F36 00008H     HDR                    MSG                    DGROUP
+ 000C:4F3E 001E0H     MSG                    MSG                    DGROUP
+ 000C:511E 00002H     PAD                    MSG                    DGROUP
+ 000C:5120 00001H     EPAD                   MSG                    DGROUP
+ 000C:5122 00068H     _BSS                   BSS                    DGROUP
+ 000C:518A 00000H     XOB                    BSS                    DGROUP
+ 000C:518A 00000H     XO                     BSS                    DGROUP
+ 000C:518A 00000H     XOE                    BSS                    DGROUP
+ 000C:518A 00000H     XOFB                   BSS                    DGROUP
+ 000C:518A 00000H     XOF                    BSS                    DGROUP
+ 000C:518A 00000H     XOFE                   BSS                    DGROUP
+ 000C:5190 00086H     C_COMMON               BSS                    DGROUP
+ 000C:5220 04F20H     STACK                  STACK                  DGROUP
+
+ Origin    Group
+ 0007:0000 BLICLPMGR
+ 0008:0000 BLIKRNMGR
+ 000A:0000 DMT_GROUP
+ 000B:0000 DYNGROUP
+ 000C:0000 DGROUP
+
+ Program entry point at 0008:0000
+

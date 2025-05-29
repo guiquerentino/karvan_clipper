@@ -1,0 +1,293 @@
+MCODCLI=0
+MVALOR=0
+MCODFUN=0
+MDINHEIRO=0
+MCREDITO=0
+MCREDITOS=0
+MDEBITO=0
+MCHEQUE=0
+DESC3=5
+DESC4=7
+DESC5=2
+LIN=4
+LS=13
+LI=13
+CE=19
+CD=58
+DO WHILE LS#04
+      @ LS,CE CLEAR TO LI,CD
+      @ LS,CE TO LI,CD DOUBLE
+      LS--
+      LI++
+      CE--
+      CD++
+      INKEY(0.01)
+ENDDO
+@ 05,25 SAY "³    RECIBO / CREDITO   ³"
+@ 06,14 SAY "FUNCIONARIO..:" GET MCODFUN PICT "999"
+READ
+IF LASTKEY()=27
+      RETURN
+ENDIF
+FUNCI()
+ORDSETFOCUS("CODFUNC")
+SEEK MCODFUN
+IF FOUND()
+        MNOMEFUNC=NOMEFUNC
+        @ 06,29 SAY MNOMEFUNC
+     ELSE
+     OL_Yield()
+        ALERT('FUNCIONARIO NAO CADASTRADO')
+        RETURN
+ENDIF
+SET KEY -40 TO CONCLI1() // F11
+@ 08,14 SAY "CLIENTE......:" GET MCODCLI PICT "9999"
+READ
+IF LASTKEY()=27
+      RETURN
+ENDIF
+IF MCODCLI=0
+        CONCLI1()
+ENDIF
+SET KEY -40 TO OTARIOS()
+CLIENTES()
+SEEK MCODCLI
+IF ! FOUND()
+        TONE(500,5)
+        OL_Yield()
+        ALERT('CLIENTE NAO CADASTRADO !!!')
+        RETURN
+ENDIF
+MNOMECLI=NOMECLI
+MPONTO=P1
+MT_MOTO=T_MOTO
+MENDCLI=ENDCLI
+MCODNOT=99999990
+MKM=KM
+IF MFORMA="RECIBO DE PAGAMENTO"
+        @ 08,29 SAY MNOMECLI
+        @ 10,14 SAY "CHEQUE.......:" GET MCHEQUE   PICT "99999.99"
+        @ 12,14 SAY "DINHEIRO.....:" GET MDINHEIRO PICT "99999.99" 
+        @ 14,14 SAY "CREDITO ATE 3:" GET MCREDITO  PICT "99999.99" 
+        @ 16,14 SAY "CREDITO 4 A 6:" GET MCREDITOS PICT "99999.99" 
+        @ 18,14 SAY "DEBITO.......:" GET MDEBITO   PICT "99999.99"
+
+     ELSE    
+        @ 08,29 SAY MNOMECLI
+        @ 10,14 SAY "DIGITE VALOR.:" GET MVALOR PICT "99999.99" VALID MVALOR > 0
+ENDIF        
+READ                
+IF LASTKEY()=27
+      RETURN
+ENDIF
+IF ! EMPTY(MCREDITO)
+          @ 14,39 SAY "DESCONTO.....:" GET DESC3 PICT "99"
+          READ
+          IF LASTKEY()=27
+                 RETURN
+          ENDIF
+          MCREDITO=MCREDITO*((100-DESC3)/100)
+ENDIF
+IF ! EMPTY(MCREDITOS)
+          @ 16,39 SAY "DESCONTO.....:" GET DESC4 PICT "99"
+          READ
+          IF LASTKEY()=27
+                 RETURN
+          ENDIF
+          MCREDITOS=MCREDITOS*((100-DESC4)/100)
+ENDIF
+MCREDITO=MCREDITO+MCREDITOS
+IF ! EMPTY(MDEBITO)
+          @ 18,39 SAY "DESCONTO.....:" GET DESC5 PICT "99" VALID DESC5 > 0
+          READ
+          IF LASTKEY()=27
+                 RETURN
+          ENDIF
+          MDEBITO=MDEBITO*((100-DESC5)/100)
+ENDIF
+MVALOR=MVALOR+MCREDITO+MDEBITO+MDINHEIRO+MCHEQUE
+set device to print
+*Printer()
+CLS           
+DADOS2()
+@ LIN,00 SAY RSOCIAL
+LIN++
+@ LIN,00 SAY ENDEMPR
+LIN++
+@ LIN,00 SAY "DATA:"
+@ LIN,06 SAY DATE()
+@ LIN,20 SAY "HORA:"
+@ LIN,26 SAY TIME()
+DO WHILE .T.
+        MCODIGO=STR(DAY(DATE()))+STRZERO(MONTH(DATE()),2)+STRZERO(RANDOM(),6)
+        MCODIGO=VAL(MCODIGO)
+        PAGAMENTO()
+        ORDSETFOCUS("CODIGO")
+        SEEK MCODIGO
+        IF ! FOUND()
+                EXIT
+        ENDIF
+ENDDO
+IF MFORMA="CREDITO EM PECAS"
+        L_DUPLA()
+        @ PROW()+1,COL() SAY MCODIGO
+ENDIF
+NORMAL()
+@ PROW()+1,COL() SAY MFORMA
+@ PROW()+1,00 SAY MNOMEFUNC
+PEQUENO()
+@ PROW()+2,32 SAY "---------------"
+@ PROW()+1,32 SAY "|R$"
+@ PROW(),36 SAY MVALOR PICT "99,999.99"
+@ PROW(),46 SAY "|"
+@ PROW()+1,32 SAY "---------------"
+
+@ PROW()+1,00  SAY " "                 
+PAGAMENTO()
+IF MFORMA="RECIBO DE PAGAMENTO"
+        IF ! EMPTY(MCHEQUE)
+              BLOQUEIO()
+              APPEND BLANK
+              REPLACE TIPO     WITH "PAGAMENTO"
+              REPLACE FORMA    WITH "CHEQUE"
+              REPLACE CLIENTE  WITH MNOMECLI
+              REPLACE NOMEFUNC WITH MNOMEFUNC
+              REPLACE VALOR    WITH MCHEQUE
+              REPLACE DATA     WITH DATE()
+              REPLACE HORA     WITH TIME()
+        ENDIF        
+        IF ! EMPTY(MDINHEIRO)
+              BLOQUEIO()
+              APPEND BLANK
+              REPLACE TIPO     WITH "PAGAMENTO"
+              REPLACE FORMA    WITH "DINHEIRO"
+              REPLACE CLIENTE  WITH MNOMECLI
+              REPLACE NOMEFUNC WITH MNOMEFUNC
+              REPLACE VALOR    WITH MDINHEIRO
+              REPLACE DATA     WITH DATE()
+              REPLACE HORA     WITH TIME()
+        ENDIF        
+        IF ! EMPTY(MCREDITO)
+              BLOQUEIO()
+              APPEND BLANK
+              REPLACE TIPO     WITH "PAGAMENTO"
+              REPLACE FORMA    WITH "CREDITO"
+              REPLACE CLIENTE  WITH MNOMECLI
+              REPLACE NOMEFUNC WITH MNOMEFUNC
+              REPLACE VALOR    WITH MCREDITO
+              REPLACE DATA     WITH DATE()
+              REPLACE HORA     WITH TIME()
+        ENDIF        
+        IF ! EMPTY(MDEBITO)
+              BLOQUEIO()
+              APPEND BLANK
+              REPLACE TIPO     WITH "PAGAMENTO"
+              REPLACE FORMA    WITH "DEBITO"
+              REPLACE CLIENTE  WITH MNOMECLI
+              REPLACE NOMEFUNC WITH MNOMEFUNC
+              REPLACE VALOR    WITH MDEBITO
+              REPLACE DATA     WITH DATE()
+              REPLACE HORA     WITH TIME()
+        ENDIF        
+        @ PROW(),00 SAY CHR(27)+CHR(64)        
+        @ PROW()+1,00 SAY "Recebemos de....:"
+    ELSEIF MFORMA="CREDITO EM PECAS"
+        BLOQUEIO()
+        APPEND BLANK
+        REPLACE CODIGO   WITH MCODIGO
+        REPLACE CLIENTE  WITH MNOMECLI
+        REPLACE NOMEFUNC WITH MNOMEFUNC
+        REPLACE VALOR    WITH MVALOR
+        REPLACE DATA     WITH DATE()
+        REPLACE HORA     WITH TIME()
+        REPLACE TIPO     WITH "CREDITO"
+        REPLACE FORMA    WITH MTIPO 
+        @ PROW(),40 SAY MTIPO
+        @ PROW(),00 SAY CHR(27)+CHR(64)
+        @ PROW()+1,00 SAY "Autorizamos credito para:"
+    ELSEIF MFORMA="CHEQUE DEVOLVIDO"
+        BLOQUEIO()
+        APPEND BLANK
+        REPLACE CLIENTE  WITH MNOMECLI
+        REPLACE NOMEFUNC WITH MNOMEFUNC
+        REPLACE VALOR    WITH MVALOR
+        REPLACE DATA     WITH DATE()
+        REPLACE HORA     WITH TIME()
+        REPLACE TIPO     WITH "CHEQUE S/F" 
+        @ PROW()+1,00 SAY "Devolvemos Cheque para:"
+ENDIF
+UNLOCK
+@ PROW(),00 SAY CHR(27)+CHR(33)
+@ PROW(),00 SAY CHR(27)+"!"+CHR(9)
+@ PROW(),00 SAY MNOMECLI
+@ PROW(),54 SAY " "
+@ PROW(),00 SAY CHR(27)+CHR(64)
+@ PROW()+1,00 SAY "A importancia de:"
+@ PROW(),00 SAY CHR(27)+CHR(33)
+EXTE=EXT(MVALOR)
+FOR I=1 TO 48
+        IF SUBSTR(EXTE,I,1)=" "
+                SP=I              
+        ENDIF     
+NEXT 
+@ PROW()+1,00 SAY LEFT(EXTE,SP)
+@ PROW()+1,00 SAY SUBSTR(EXTE, SP+1, 48)
+IF MFORMA="CREDITO EM PECAS"
+        @ PROW()+1,00 SAY PADC("VALIDADE 3 MESES",48)
+ENDIF
+LIN=0
+LIN++
+@ LIN,54 SAY " "
+MOSTEXCUPOM()
+@ PROW()+4,01 SAY " "                       
+@ PROW(),00 SAY CHR(27)+chr(109)
+IF MFORMA="CHEQUE DEVOLVIDO"
+                     ENTREGA()
+                     BLOQUEIO()
+                     APPEND BLANK
+                     REPLACE ENTREGAS WITH "CHEQUE "+LEFT(MNOMECLI,38)
+                     REPLACE PONTO    WITH MPONTO
+                     REPLACE ENDERECO WITH MENDCLI
+                     REPLACE CODIGO   WITH MCODNOT
+                     REPLACE HORA     WITH TIME()
+                     REPLACE KM       WITH MKM
+                     REPLACE T_MOTO   WITH MT_MOTO  
+                     UNLOCK
+                     TESTAPONTO()
+ENDIF
+IF MFORMA="RECIBO DE PAGAMENTO"
+        @ PROW(),00 SAY CHR(27)+CHR(33)
+        @ PROW(),00 SAY CHR(27)+CHR(87)
+        @ PROW(),00 SAY CHR(27)+CHR(100)
+        @ PROW(),00 SAY CHR(27)+CHR(45)
+        @ PROW(),00 SAY CHR(27)+"!"+CHR(9)
+        @ PROW()+3,00 SAY MFORMA
+        @ PROW(),00 SAY CHR(27)+CHR(64)
+        @ PROW()+1,00 SAY MNOMEFUNC
+        @ PROW()+1,15 SAY DATE()
+        @ PROW(),27 SAY TIME()
+        @ PROW(),00 SAY CHR(27)+CHR(33)
+        @ PROW(),00 SAY CHR(27)+CHR(87)
+        @ PROW(),00 SAY CHR(27)+CHR(100) 
+        @ PROW(),00 SAY CHR(27)+"!"+CHR(9)
+        *@ PROW(),00 SAY CHR(27)+CHR(45)
+        @ PROW()+1,00 SAY "---------------"
+        @ PROW()+1,00 SAY "|R$"
+        @ PROW(),04 SAY MVALOR PICT "99,999.99"
+        @ PROW(),14 SAY "|"
+        @ PROW()+1,00 SAY "---------------"
+        @ PROW()+1,01 say " "
+        @ PROW(),00 SAY CHR(27)+CHR(64)
+        @ PROW()+1,00 SAY "CLIENTE:"
+        @ PROW(),00 SAY CHR(27)+CHR(33)
+        @ PROW(),00 SAY CHR(27)+"!"+CHR(9)
+        @ PROW(),00 SAY MNOMECLI
+        @ PROW(),54 SAY " "
+        @ PROW()+4,00 SAY " "
+        @ PROW(),00 SAY CHR(27)+CHR(109)
+        LIN=0
+ENDIF
+SET DEVICE TO SCREEN
+RETURN
+
+

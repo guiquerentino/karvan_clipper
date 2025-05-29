@@ -1,0 +1,425 @@
+IF .NOT. FILE("D:\KARVAN\CLIENTES.DBF")
+        DBFCLI()
+ENDIF
+IF .NOT. FILE("D:\KARVAN\CHEQUE.DBF")
+        DBFCHE()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\CONFERE\CONFERE.DBF")
+        CONFEREDBF()
+ENDIF
+IF .NOT. FILE("D:\KARVAN\FISCAL.DBF")
+        DBF_FISCAL()
+ENDIF
+IF .NOT. FILE("D:\KARVAN\ROTA.DBF")
+        DBF_ROTA()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\TRAVA.DBF")
+        DBFTRAVA()
+ENDIF           
+IF .NOT. FILE ("D:\KARVAN\TRAVAPED.DBF")
+        DBFTRAVAPED()
+ENDIF           
+IF .NOT. FILE ("D:\KARVAN\SENHA.DBF")
+        DBFSENHA()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\ENTREGA.DBF")
+        DBFENTREGA()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\REL_ENTR.DBF")
+        DBFREL_ENTR()
+ENDIF           
+IF .NOT. FILE ("D:\KARVAN\MOTOBOY.DBF")
+        DBFMOTO()
+ENDIF           
+IF .NOT. FILE ("D:\KARVAN\DEVOLUCAO.DBF")
+        DBFDEVOL()
+ENDIF           
+IF .NOT. FILE ("D:\KARVAN\ENTR_CLI.DBF")
+        DBFENTR_CLI()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\FUNC.DBF")
+        DBFFUNC()      
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\ORCA.DBF")
+        DBFORCA()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\ORCAPED.DBF")
+        DBFORCAPED()
+ENDIF
+IF .NOT. FILE("D:\KARVAN\FORNEC.DBF")
+        DBFFORNEC()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\GARANTIA.DBF")
+        DBFGARANTIA()
+ENDIF             
+IF .NOT. FILE ("D:\KARVAN\PEDIDO\PEDIDO.DBF")
+        PEDIDODBF()
+ENDIF
+IF .NOT. FILE("D:\KARVAN\PEDCUP.DBF")
+        DBFPEDCUP()
+ENDIF
+IF .NOT. FILE("D:\KARVAN\PECAS.DBF")
+        DBFPEC()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\CUPOM.DBF")
+        DBFNOT()
+ENDIF
+IF .NOT. FILE ("D:\KARVAN\DADOS.DBF")
+        DBFDADOS()
+ENDIF
+**************************/FUN€AO FISCAL DBF\*************************
+
+********************************/FUN€AO CLIENTES DBF\*************************
+
+FUNCTION DBFCLI
+ARQ1:={}
+AADD (ARQ1,{"CODCLI   ","N",04,00})
+AADD (ARQ1,{"NOMECLI  ","C",35,00})
+AADD (ARQ1,{"RESPCLI  ","C",35,00})
+AADD (ARQ1,{"ENDCLI   ","C",35,00})
+AADD (ARQ1,{"CGC      ","C",18,00})
+AADD (ARQ1,{"TEL      ","C",09,00})
+AADD (ARQ1,{"INSCR    ","C",15,00})
+AADD (ARQ1,{"CIDADE   ","C",20,00})
+AADD (ARQ1,{"ESTADO   ","C",02,00})
+AADD (ARQ1,{"TAXA     ","C",01,00})
+AADD (ARQ1,{"BLOQUEIO ","C",01,00})
+AADD (ARQ1,{"MANDANOTA","C",01,00})
+AADD (ARQ1,{"PRIORI   ","C",01,00})
+AADD (ARQ1,{"P1",       "C",02,00})
+AADD (ARQ1,{"P2",       "C",02,00})
+AADD (ARQ1,{"P3",       "C",02,00})
+AADD (ARQ1,{"P4",       "C",02,00})
+AADD (ARQ1,{"KM",       "N",06,03})
+AADD (ARQ1,{"VALSEMANA","N",08,02})
+AADD (ARQ1,{"PCHEQUE","N",08,02})
+AADD (ARQ1,{"PCHEQUE_SF","N",08,02})
+AADD (ARQ1,{"PCARTAO","N",08,02})
+      DBCREATE("D:\KARVAN\CLIENTES", ARQ1)
+RETURN(.T.)
+
+***********************************/FUN€AO PECAS.DBF\*************************
+                 
+FUNCTION DBFPEC
+ARQ2:={}
+AADD (ARQ2,{"CODBARRA","C",20,00})
+AADD (ARQ2,{"CODBARRA1","C",20,00})
+AADD (ARQ2,{"CODBARRA2","C",20,00})
+AADD (ARQ2,{"CODPECA ","C",05,00})
+AADD (ARQ2,{"DIGITO","C",01,00})
+AADD (ARQ2,{"LOCAL","C",10,00})
+AADD (ARQ2,{"NOMEPECA","C",45,00})
+AADD (ARQ2,{"NOMEPECA2","C",68,00})
+AADD (ARQ2,{"NOMEPECA3","C",68,00})
+AADD (ARQ2,{"PRECO","N",07,02})
+AADD (ARQ2,{"QTD","N",03,00})
+AADD (ARQ2,{"TEMP","N",03,00})
+AADD (ARQ2,{"MULTIPLO","N",03,00})
+AADD (ARQ2,{"TEMPPED","N",03,00})
+AADD (ARQ2,{"QTD2","N",03,00})
+AADD (ARQ2,{"QTD3","N",03,00})
+AADD (ARQ2,{"QTD4","N",03,00})
+AADD (ARQ2,{"QTD5","N",03,00})
+AADD (ARQ2,{"CQTD2","N",03,00})
+AADD (ARQ2,{"CQTD3","N",03,00})
+AADD (ARQ2,{"CQTD4","N",03,00})
+AADD (ARQ2,{"CQTD5","N",03,00})
+AADD (ARQ2,{"QTDMAX","N",03,00})
+AADD (ARQ2,{"QTDMAX1","N",03,00})
+AADD (ARQ2,{"QTDMAX2","N",03,00})
+AADD (ARQ2,{"QTDMAX3","N",03,00})
+AADD (ARQ2,{"QTDMIN","N",03,00})
+AADD (ARQ2,{"FABRIC","C",10,00})
+AADD (ARQ2,{"NFABRIC","C",12,00})
+AADD (ARQ2,{"FABRIC2","C",10,00})
+AADD (ARQ2,{"NFABRIC2","C",12,00})
+AADD (ARQ2,{"FABRIC3","C",10,00})
+AADD (ARQ2,{"NFABRIC3","C",12,00})
+AADD (ARQ2,{"DATAENTR","D",08,00})
+AADD (ARQ2,{"P_CUSTO","N",06,02})
+AADD (ARQ2,{"P_CUSTO2","N",06,02})
+AADD (ARQ2,{"P_CUSTO3","N",06,02})
+AADD (ARQ2,{"P_CUSTO4","N",06,02})
+AADD (ARQ2,{"DISTRIB","C",20,00})
+AADD (ARQ2,{"DISTRIB2","C",20,00})
+AADD (ARQ2,{"DISTRIB3","C",20,00})
+AADD (ARQ2,{"DISTRIB4","C",20,00})
+AADD (ARQ2,{"UNIDADE","C",02,00})
+AADD (ARQ2,{"TEMPUNI","C",01,00})
+         DBCREATE("D:\KARVAN\PECAS", ARQ2)
+RETURN(.T.)
+
+***********************************/FUN€AO CUPOM.DBF\*************************
+
+FUNCTION DBFNOT
+ARQ3:={}
+AADD(ARQ3,{"CODNOT",   "N",09,0})
+AADD(ARQ3,{"NOTCLI",   "C",35,0})
+AADD(ARQ3,{"NOTFUNC",  "C",10,0})
+AADD(ARQ3,{"NOTPAG",   "C",10,2})
+AADD(ARQ3,{"NOTTOTG",  "N",15,2})
+AADD(ARQ3,{"D_NOT",    "D",08,0})
+AADD(ARQ3,{"ABRE",     "C",01,0})
+AADD(ARQ3,{"HORANOT",  "C",05,0})
+   DBCREATE("D:\KARVAN\CUPOM",ARQ3)
+RETURN(.T.)
+
+***********************************/FUN€AO FORNEC.DBF\************************
+
+FUNCTION DBFFORNEC
+ARQ4:={}
+AADD (ARQ4,{"CODFOR",  "N",03,00})
+AADD (ARQ4,{"NOMEFOR", "C",20,00})
+AADD (ARQ4,{"VENDEDOR","C",20,00})
+AADD (ARQ4,{"CONTVEN", "C",09,00})
+AADD (ARQ4,{"BIPVEN",  "C",09,00})
+AADD (ARQ4,{"CELVEN",  "C",09,00})
+AADD (ARQ4,{"TELFOR",  "C",09,00})
+AADD (ARQ4,{"BIPCOD",  "C",09,00})
+      DBCREATE("D:\KARVAN\FORNEC", ARQ4)
+RETURN(.T.)
+
+***********************************/FUN€AO PEDIDO.DBF\************************
+
+FUNCTION DBFPEDIDO
+ARQ5:={}
+AADD (ARQ5, {"PCODPEC ","C",05,00})
+AADD (ARQ5, {"PNOMPEC ","C",45,00})
+AADD (ARQ5, {"PFABRIC ","C",10,00})
+AADD (ARQ5, {"PNFABRIC","C",12,00})
+AADD (ARQ5, {"PPREPEC ","N",06,02})
+AADD (ARQ5, {"PQTDPEC ","N",03,00})
+AADD (ARQ5, {"PUNIDAD ","C",02,00})
+AADD (ARQ5, {"PPRETOT ","N",15,02})
+AADD (ARQ5, {"PCUSTO  ","N",06,02})
+AADD (ARQ5, {"LOCAL   ","C",10,02})
+AADD (ARQ5, {"BARRAS  ","C",20,00})
+     DBCREATE("PEDIDO",ARQ5)
+RETURN(.T.)
+
+********************************/FUN€AO ORCAPED.DBF\****************************
+
+FUNCTION DBFORCAPED
+ARQ6:={}
+AADD (ARQ6,{"PEDCOD  ","C",05,00})
+AADD (ARQ6,{"PEDNUM  ","N",09,00})
+AADD (ARQ6,{"PEDQTD  ","N",03,00})
+AADD (ARQ6,{"PRECOCUP","N",06,02})
+AADD (ARQ6,{"DATACUP ","D",08,00})
+      DBCREATE("D:\KARVAN\ORCAPED", ARQ6)
+RETURN(.T.)
+
+***********************************/FUN€AO GARANTIA.DBF\**********************
+
+FUNCTION DBFGARANTIA
+ARQ7:={}
+AADD (ARQ7,{"GARCOD ","C",05,00})
+AADD (ARQ7,{"GARVEN ","C",10,00})
+AADD (ARQ7,{"GARCLI ","C",35,00})
+AADD (ARQ7,{"GARPECA","C",45,00})
+AADD (ARQ7,{"GARNFAB","C",12,00})
+AADD (ARQ7,{"GARFABR","C",10,00})
+AADD (ARQ7,{"GARQTD ","N",02,00})
+AADD (ARQ7,{"GARDATA","D",08,00})
+      DBCREATE("D:\KARVAN\GARANTIA", ARQ7)
+RETURN(.T.)
+
+***********************************/FUN€AO FUNCI.DBF\*************************
+
+FUNCTION DBFFUNC
+ARQ8:={}
+AADD (ARQ8,{"CODFUNC","N",02,00})
+AADD (ARQ8,{"NOMEFUNC","C",10,00})
+      DBCREATE("D:\KARVAN\FUNC", ARQ8)
+RETURN(.T.)
+
+********************************/FUN€AO TRAVA MOTOBOY\*************************
+
+FUNCTION DBFTRAVA
+ARQ9:={}
+AADD (ARQ9,{"TRAVA", "C",01,00})
+      DBCREATE("D:\KARVAN\TRAVA", ARQ9)
+RETURN(.T.)
+
+
+********************************/FUN€AO PEDCUP.DBF\****************************
+
+FUNCTION DBFPEDCUP
+ARQ10:={}
+AADD (ARQ10,{"PEDCOD  ","C",05,00})
+AADD (ARQ10,{"PEDNUM  ","N",09,00})
+AADD (ARQ10,{"PEDQTD  ","N",03,00})
+AADD (ARQ10,{"PRECOCUP","N",06,02})
+AADD (ARQ10,{"DATACUP ","D",08,00})
+      DBCREATE("D:\KARVAN\PEDCUP", ARQ10)
+RETURN(.T.)
+
+********************************/FUN€AO DADOS DBF\****************************
+
+FUNCTION DBFDADOS
+ARQ11:={}
+AADD (ARQ11,{"RSOCIAL","C",30,00})
+AADD (ARQ11,{"NOMEABR","C",10,00})
+AADD (ARQ11,{"ENDEMPR","C",30,00})
+AADD (ARQ11,{"BAIRRO ","C",20,00})
+AADD (ARQ11,{"CIDADE ","C",15,00})
+AADD (ARQ11,{"CEP    ","C",09,00})
+AADD (ARQ11,{"ESTADO ","C",02,00})
+AADD (ARQ11,{"CGCEMPR","C",18,00})
+AADD (ARQ11,{"INSCEST","C",15,00})
+AADD (ARQ11,{"TELE   ","C",09,00})
+AADD (ARQ11,{"FAX    ","C",09,00})
+AADD (ARQ11,{"MENS1  ","C",35,00})
+AADD (ARQ11,{"MENS2  ","C",35,00})
+      DBCREATE("D:\KARVAN\DADOS", ARQ11)
+RETURN(.T.)
+
+***********************************/FUN€AO ORCA.DBF\**************************
+
+FUNCTION DBFORCA
+ARQ12:={}
+AADD(ARQ12,{"CODNOT",   "N",09,0})
+AADD(ARQ12,{"NOTCLI",   "C",35,0})
+AADD(ARQ12,{"NOTFUNC",  "C",10,0})
+AADD(ARQ12,{"NOTPAG",   "C",10,2})
+AADD(ARQ12,{"NOTTOTG",  "N",15,2})
+AADD(ARQ12,{"D_NOT",    "D",08,0})
+AADD(ARQ12,{"HORANOT",  "C",05,0})
+   DBCREATE("D:\KARVAN\ORCA",ARQ12)
+RETURN(.T.)
+
+***********************************/FUN€AO ENTREGA.DBF\*********************
+
+FUNCTION DBFENTREGA
+ARQ13:={}
+AADD (ARQ13,{"ENTREGAS","C",35,00})
+AADD (ARQ13,{"ENDERECO","C",35,00})
+AADD (ARQ13,{"PONTO",   "C",02,00})
+AADD (ARQ13,{"P_EXC",   "C",02,00})
+AADD (ARQ13,{"CODIGO",  "N",09,00})
+AADD (ARQ13,{"PRIORI",  "C",01,00})
+AADD (ARQ13,{"KM",      "N",06,03})
+AADD (ARQ13,{"HORA",    "C",08,00})
+      DBCREATE("D:\KARVAN\ENTREGA", ARQ13)
+RETURN(.T.)
+
+********************************/FUN€AO *************************************
+
+FUNCTION CONFEREDBF
+ARQ14:={}
+AADD (ARQ14, {"CFUNC",   "C",10,00})
+AADD (ARQ14, {"CDISTRIB","C",20,00})
+AADD (ARQ14, {"CDATA",   "D",08,00})
+AADD (ARQ14, {"CCODNOT", "C",09,00})
+AADD (ARQ14, {"FECHA   ","C",01,00})
+     DBCREATE("D:\KARVAN\CONFERE\CONFERE",ARQ14)
+RETURN(.T.)
+
+********************************/FUN€AO SENHAS DBF\****************************
+
+FUNCTION DBFSENHA
+ARQ15:={}
+AADD (ARQ15,{"NOMESENHA","C",10,00})
+AADD (ARQ15,{"SENHA","C",10,00})
+AADD (ARQ15,{"DIREITO","N",02,00})
+      DBCREATE("D:\KARVAN\SENHA", ARQ15)
+      ACESSO=1
+      SENHA()
+RETURN(.T.)
+
+*******************************/FUN€AO REL_ENTREGAS.DBF\*********************
+
+FUNCTION DBFREL_ENTR
+ARQ17:={}
+AADD (ARQ17,{"CODENTR","N",09,00})
+AADD (ARQ17,{"MOTOBOY","C",10,00})
+AADD (ARQ17,{"QTDENTR","N",02,00})
+AADD (ARQ17,{"DATA",   "D",08,00})
+AADD (ARQ17,{"HORA_S", "C",08,00})
+AADD (ARQ17,{"HORA_C", "C",08,00})
+AADD (ARQ17,{"PONTO",  "C",02,00})
+AADD (ARQ17,{"TEMPO",  "C",08,00})
+AADD (ARQ17,{"KM",     "N",06,03})
+AADD (ARQ17,{"MAQUINA","N",02,00})
+AADD (ARQ17,{"SACOLA", "N",02,00})
+      DBCREATE("D:\KARVAN\REL_ENTR", ARQ17)
+RETURN(.T.)
+
+*******************************/FUN€AO ENTR_CLI.DBF\*********************
+
+FUNCTION DBFENTR_CLI
+ARQ18:={}
+AADD (ARQ18,{"CLIENTE","C",35,00})
+AADD (ARQ18,{"ENTREGA","N",09,00})
+AADD (ARQ18,{"CODIGO","N",09,00})
+      DBCREATE("D:\KARVAN\ENTR_CLI", ARQ18)
+RETURN(.T.)
+
+FUNCTION DBF_FISCAL
+ARQ19:={}
+AADD (ARQ19,{"fiscal   ","N",05,00})
+      DBCREATE("D:\KARVAN\FISCAL", ARQ19)
+RETURN(.T.)
+
+**************************/FUN€AO ROTA ENTREGAS DBF\*************************
+
+FUNCTION DBF_ROTA
+ARQ20:={}
+AADD (ARQ20,{"ENDERECO","C",35,00})
+      DBCREATE("D:\KARVAN\ROTA", ARQ20)
+RETURN(.T.)
+
+********************************/FUN€AO MOTOBOY\*************************
+
+FUNCTION DBFMOTO
+ARQ21:={}
+AADD (ARQ21,{"CODMOTO", "N",02,00})
+AADD (ARQ21,{"MOTOCA", "C",10,00})
+AADD (ARQ21,{"CHEGADA","C",08,00})
+AADD (ARQ21,{"KM","N",06,03})
+AADD (ARQ21,{"QTD","N",02,00})
+AADD (ARQ21,{"SAIDA","C",08,00})
+      DBCREATE("D:\KARVAN\MOTOBOY", ARQ21)
+RETURN(.T.)
+
+********************************/FUN€AO DEVOLUCAO DBF\*************************
+
+FUNCTION DBFDEVOL
+ARQ22:={}
+AADD (ARQ22,{"DCODNOT  ","N",09,00})
+AADD (ARQ22,{"DNOMECLI ","C",35,00})
+AADD (ARQ22,{"DNOMEPECA","C",35,00})
+AADD (ARQ22,{"DFUNC    ","C",10,00})
+AADD (ARQ22,{"DCODPECA ","C",05,00})
+AADD (ARQ22,{"DDATA    ","D",08,00})
+AADD (ARQ22,{"DDTNOT   ","D",08,00})
+AADD (ARQ22,{"DHORA    ","C",08,00})
+AADD (ARQ22,{"DQTD     ","N",03,00})
+AADD (ARQ22,{"BAIXA    ","C",01,00})
+AADD (ARQ22,{"IMPRIME  ","C",01,00})
+AADD (ARQ22,{"DPRECO   ","N",09,02})
+AADD (ARQ22,{"DNOTTOTAL","N",15,02})
+      DBCREATE("D:\KARVAN\DEVOLUCAO", ARQ22)
+RETURN(.T.)
+                                           
+********************************/FUN€AO TRAVA PEDIDO\*************************
+
+FUNCTION DBFTRAVAPED
+ARQ23:={}
+AADD (ARQ23,{"TRAVAPED", "C",01,00})
+      DBCREATE("D:\KARVAN\TRAVAPED", ARQ23)
+RETURN(.T.)
+
+********************************/FUN€AO TRAVA PEDIDO\*************************
+
+FUNCTION DBFCHE
+ARQ24:={}
+AADD (ARQ24,{"CLIENTE", "C",35,00})
+AADD (ARQ24,{"NOME", "C",35,00})
+AADD (ARQ24,{"CPF", "C",18,00})
+AADD (ARQ24,{"DATA_D", "D",08,00})
+AADD (ARQ24,{"DATA_R", "D",08,00})
+AADD (ARQ24,{"VALOR", "N",08,02})
+AADD (ARQ24,{"OBS", "C",20,00})
+      DBCREATE("D:\KARVAN\CHEQUE", ARQ24)
+RETURN(.T.)
